@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff7eb">
+  <meta name="description" content="Monte um pedido demonstrativo na Forno da Vila. A sacola funciona no navegador, mas os dados do formulário não são enviados nem armazenados.">
+  <title>Fazer pedido | Forno da Vila</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+  <div class="announcement"><strong>Forno aceso, mesa cheia.</strong> Massa artesanal e ingredientes de verdade.</div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Forno da Vila — página inicial">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" fill="#F7D58D" stroke="#FFF4D9" stroke-width="1.5"/><path d="M16 3A13 13 0 0 1 28.5 19.5L16 16V3Z" fill="#C83C30"/><path d="M16 16 28.5 19.5A13 13 0 0 1 16 29V16Z" fill="#B72F25"/><circle cx="21.2" cy="8.5" r="1.8" fill="#385B3D"/><circle cx="22.5" cy="21.5" r="1.7" fill="#385B3D"/><circle cx="10.2" cy="19.2" r="1.8" fill="#C83C30"/><circle cx="13" cy="10.8" r="1.6" fill="#C83C30"/><circle cx="17.4" cy="24.2" r="1.5" fill="#F7D58D"/></svg></span>
+        <span>Forno da Vila<small>PIZZARIA ARTESANAL</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle aria-label="Abrir menu de navegação">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal" data-open="false">
+        <a href="index.html">Início</a>
+<a href="cardapio.html">Cardápio</a>
+<a href="historia.html">A casa</a>
+<a href="acessibilidade.html">Acessibilidade</a>
+        <a class="nav-order" href="pedido.html" aria-current="page">Fazer pedido <span aria-hidden="true">↗</span></a>
+      </nav>
+      <div class="header-actions" aria-label="Ações do site">
+        <button class="icon-button" type="button" id="theme-toggle" aria-pressed="false" aria-label="Ativar tema escuro" title="Alternar tema">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.1 15.1A8.5 8.5 0 0 1 8.9 3.9 8.5 8.5 0 1 0 20.1 15.1Z"/></svg>
+        </button>
+        <button class="cart-button" type="button" data-cart-open aria-haspopup="dialog" aria-controls="cart-dialog">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+          <span class="cart-label">Sacola</span><span class="cart-count" data-cart-count aria-label="0 itens na sacola">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="conteudo">
+    <section class="page-hero" aria-labelledby="page-title"><div class="container page-hero-grid"><div><p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Você escolhe, a gente organiza</p><h1 id="page-title">Vamos preparar o seu <em>pedido.</em></h1><p class="lead">Revise os itens da sacola, preencha os dados de exemplo e confira o resumo. Esta demonstração funciona apenas no navegador: nenhum pedido será enviado.</p></div><div class="page-hero-art food-photo"><img src="https://images.unsplash.com/photo-1710235952489-3453b2f7d446?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Pizzas artesanais para uma refeição em grupo" width="1000" height="760" loading="lazy"></div></div></section>
+    <section class="section-pad"><div class="container order-layout"><section class="form-panel" aria-labelledby="order-form-title"><h2 id="order-form-title">Dados do pedido</h2><form id="order-form" novalidate>
+      <div class="form-grid">
+        <div class="form-field form-field-full"><label for="customer-name">Nome completo</label><input id="customer-name" name="name" autocomplete="name" required minlength="2" maxlength="100"><span class="form-hint">Como podemos identificar o pedido?</span></div>
+        <div class="form-field"><label for="customer-phone">Telefone para contato</label><input id="customer-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="(00) 00000-0000"></div>
+        <div class="form-field"><label for="customer-email">E-mail (opcional)</label><input id="customer-email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com"></div>
+        <fieldset class="form-field form-field-full fulfillment-fieldset"><legend class="form-legend">Como prefere receber?</legend><div class="radio-row"><label class="radio-option"><input type="radio" name="fulfillment" value="delivery" checked> Entrega</label><label class="radio-option"><input type="radio" name="fulfillment" value="pickup"> Retirada no local</label></div></fieldset>
+        <div class="form-field form-field-full" id="address-field"><label for="customer-address">Endereço para entrega</label><input id="customer-address" name="address" autocomplete="street-address" required placeholder="Rua, número, bairro e complemento"><span class="form-hint">Campo ilustrativo. Endereço real e área de entrega devem ser configurados.</span></div>
+        <div class="form-field form-field-full"><label for="payment-method">Forma de pagamento (preferência)</label><select id="payment-method" name="payment" required><option value="">Selecione uma opção</option><option value="pix">Pix</option><option value="card">Cartão</option><option value="cash">Dinheiro</option></select></div>
+        <div class="form-field form-field-full"><label for="order-notes">Observações (opcional)</label><textarea id="order-notes" name="notes" maxlength="500" placeholder="Alguma observação sobre o pedido?" ></textarea><span class="form-hint">Não use este campo para informações sensíveis.</span></div>
+        <div class="form-field form-field-full"><button class="button button-primary" type="submit">Revisar pedido <span aria-hidden="true">→</span></button><p class="form-hint">Ao continuar, você verá uma confirmação demonstrativa. Os dados não são transmitidos nem armazenados.</p><p class="status-message" id="order-status" role="status" aria-live="polite" hidden></p></div>
+      </div>
+    </form></section>
+    <aside class="order-summary-panel" id="order-summary-panel" aria-labelledby="order-summary-title"><h2 id="order-summary-title">Resumo da sacola</h2><p class="summary-empty" id="order-empty">Sua sacola está vazia. Escolha itens no cardápio para montar seu pedido.</p><ul class="order-summary-list" id="order-summary-list" aria-label="Itens do pedido"></ul><div class="summary-divider"></div><div class="summary-total"><span>Subtotal</span><span id="order-summary-total">R$ 0,00</span></div><p class="form-hint summary-disclaimer">Taxas, prazo de entrega e disponibilidade não são calculados neste modelo.</p><a class="button button-secondary full-width-button" href="cardapio.html">Voltar ao cardápio</a></aside></div></section>
+  </main>
+  <p class="sr-only" id="global-status" role="status" aria-live="polite" aria-atomic="true"></p>
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand-column">
+        <a class="brand footer-brand" href="index.html" aria-label="Forno da Vila — início"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" fill="#F7D58D" stroke="#FFF4D9" stroke-width="1.5"/><path d="M16 3A13 13 0 0 1 28.5 19.5L16 16V3Z" fill="#C83C30"/><path d="M16 16 28.5 19.5A13 13 0 0 1 16 29V16Z" fill="#B72F25"/><circle cx="21.2" cy="8.5" r="1.8" fill="#385B3D"/><circle cx="22.5" cy="21.5" r="1.7" fill="#385B3D"/><circle cx="10.2" cy="19.2" r="1.8" fill="#C83C30"/><circle cx="13" cy="10.8" r="1.6" fill="#C83C30"/><circle cx="17.4" cy="24.2" r="1.5" fill="#F7D58D"/></svg></span><span>Forno da Vila<small>PIZZARIA ARTESANAL</small></span></a>
+        <p class="footer-description">Pizza feita para compartilhar. Massa artesanal, ingredientes selecionados e aquele clima gostoso de mesa cheia.</p>
+      </div>
+      <div class="footer-col"><h2>Explore</h2><nav class="footer-links" aria-label="Links do rodapé"><a href="index.html">Início</a><a href="cardapio.html">Cardápio</a><a href="historia.html">A casa</a><a href="acessibilidade.html">Acessibilidade</a><a href="pedido.html">Fazer pedido</a></nav></div>
+      <div class="footer-col"><h2>Funcionamento demonstrativo</h2><p class="footer-hours">Todos os dias<br>18h às 23h<br><br>Endereço, telefone e horários reais devem ser configurados antes da publicação.</p></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span data-current-year>2026</span> Forno da Vila. Projeto demonstrativo.</span><span>Feito para caber em todas as telas — e em mais mesas.</span></div>
+  </footer>
+  <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title" data-cart-dialog>
+    <div class="cart-dialog-inner">
+      <div class="dialog-heading"><h2 id="cart-title">Sua sacola</h2><button class="icon-button" type="button" data-cart-close aria-label="Fechar sacola">✕</button></div>
+      <p class="summary-empty" data-cart-empty>Sua sacola ainda está vazia. Escolha suas pizzas no cardápio.</p>
+      <ul class="cart-items" data-cart-items aria-label="Itens adicionados"></ul>
+      <div class="cart-footer" data-cart-footer hidden>
+        <div class="cart-total-row"><span>Subtotal</span><span data-cart-total>R$ 0,00</span></div>
+        <div class="cart-actions"><button class="button button-secondary" type="button" data-cart-clear>Limpar sacola</button><a class="button button-primary" href="pedido.html">Continuar pedido <span aria-hidden="true">→</span></a></div>
+      </div>
+      <p class="cart-status" data-cart-status role="status" aria-live="polite"></p>
+    </div>
+  </dialog>
+</body>
+</html>
