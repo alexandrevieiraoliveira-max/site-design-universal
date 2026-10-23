@@ -1,0 +1,3 @@
+Este projeto foi criado para uso e adaptação pelo destinatário.
+
+Os arquivos-fonte originais incluídos neste pacote podem ser copiados, modificados e redistribuídos. Marcas, nomes, conteúdos e recursos de terceiros adicionados posteriormente não são abrangidos por esta permissão e devem respeitar as respectivas licenças.
